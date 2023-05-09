@@ -8,8 +8,15 @@ from itertools import *
 # todo: matplotlib powered --interactive
 # arbitrary freq marker spacing
 
-path = sys.argv[1]
-output = sys.argv[2]
+if len(sys.argv) == 1:
+    print("Usage: python script.py <input file path> <output file path>")
+    print("Enter input file path:")
+    path = input()
+    print("Enter output file path:")
+    output = input()
+else:
+    path = sys.argv[1]
+    output = sys.argv[2]
 
 raw_data = lambda: open(path)
 if path.endswith('.gz'):
